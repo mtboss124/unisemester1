@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Set base path if this is in a subfolder
+RewriteBase /exp/p1/
+
+# Don't rewrite existing files or directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Route everything to index.php
+RewriteRule ^ index.php [QSA,L]
